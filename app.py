@@ -20,6 +20,7 @@ data = conn[DATABASE_NAME][COLLECTION_NAME]
 def index():
     result = data.find({})
     return render_template ("index.html" , data = result)
+    # render_template redirects to the index.html and we pass the database information from result to data in the index.html page
     
 @app.route('/viewlist')
 def viewlist():
@@ -29,6 +30,12 @@ def viewlist():
 @app.route('/viewgraph')
 def viewgraph():
     return render_template ("viewgraph.html")
+    
+@app.route('/editpolicy')
+def editpolicy():
+    return render_template('editpolicy.html')
+    
+    
     
 # "magic code" -- boilerplate
 if __name__ == '__main__':
