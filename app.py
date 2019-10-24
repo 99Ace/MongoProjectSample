@@ -26,6 +26,10 @@ def viewlist():
     policyowner = data.find({})
     return render_template ("viewlist.html", data = policyowner)
     
+@app.route('/viewgraph')
+def viewgraph():
+    return render_template ("viewgraph.html")
+    
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.secret_key = 'super secret key'
